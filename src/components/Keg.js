@@ -11,10 +11,13 @@ function Keg(props){
         <div class="row">
           <div class="card">
             <h2>{props.name}</h2>
-            <h3>Quantity: {props.quantity}</h3>
+            <p>Brand: {props.brand}</p>
+            <p>Quantity: {props.quantity}</p>
+            <button onClick={() => props.whenSellClicked(props.id)}>Sell Pint</button>
+            {/* <h3>Quantity: {props.quantity}</h3>
             <p>Brand: {props.brand}</p>
             <p>Price: {props.price}</p>
-            <p>Style: {props.style}</p>
+            <p>Style: {props.style}</p> */}
           </div>
         </div>
       </div>
@@ -30,7 +33,8 @@ Keg.propTypes = {
   style: PropTypes.string,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenKegClicked: PropTypes.func
+  whenKegClicked: PropTypes.func,
+  whenSellClicked: PropTypes.func
 };
 
 export default Keg;

@@ -10,7 +10,7 @@ class KegControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterKegList: [],
-      selectedKeg: null
+      selectedKeg: null,
     };
   }
 
@@ -51,11 +51,13 @@ class KegControl extends React.Component {
   handleSellingPint = (id) => {
     const newMasterKegList = this.state.masterKegList;
     newMasterKegList.map((keg) => {
-      if(keg.id === id && keg.quantity != 0) {
-        keg.quantity = keg.quantity - 1;
-      } else if (keg.id === id && keg.quantity === 0) {
-        keg.quantity = "Out of Stock";
-      }
+      if(keg.id === id) {
+        if (keg.quantity > 0) {
+          keg.quantity = keg.quantity - 1;
+        } else {
+          keg.quantity = "Out of stock!"
+        }
+      } 
       return keg;
     })
     this.setState({
@@ -74,7 +76,7 @@ class KegControl extends React.Component {
       buttonText = "Return to Keg List";
     } else {
       currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onSellPint={this.handleSellingPint} />;
-      buttonText = "Add New Item"
+      buttonText = "Add New Keg"
     }
     return (
       <React.Fragment>

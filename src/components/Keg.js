@@ -13,7 +13,7 @@ function Keg(props){
             <h2>{props.name}</h2>
             <p>Brand: {props.brand}</p>
             <p>Quantity: {props.quantity}</p>
-            <p>Status Message: {props.status}</p>
+            <p>Status: {props.status}</p>
             <button onClick={() => props.whenSellClicked(props.id)}>Sell Pint</button>
             <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
           </div>

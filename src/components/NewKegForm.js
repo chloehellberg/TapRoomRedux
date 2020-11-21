@@ -7,11 +7,11 @@ function NewKegForm(props){
     event.preventDefault();
     const newKeg = {
       name: event.target.name.value,
-      quantity: 2,
+      quantity: 20,
       brand: event.target.brand.value,
       price: event.target.price.value,
       style: event.target.style.value,
-      status: "Keg is full",
+      status: "Keg is Full",
       id: v4()
     }
     props.onNewKegCreation(newKeg);

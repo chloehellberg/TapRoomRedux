@@ -48,14 +48,40 @@ class KegControl extends React.Component {
     }
   }
 
+  // handleSellingPint = (id) => {
+  //   const newMasterKegList = this.state.masterKegList;
+  //   newMasterKegList.map((keg) => {
+  //     if(keg.id === id) {
+  //       if (keg.quantity <= 11) {
+  //         keg.status = "Almost out of stock";
+  //         keg.quantity = keg.quantity -1
+  //       } else if (keg.quantity <= 10) {
+  //         keg.quantity = keg.quantity - 1;
+          
+  //       } else {
+  //         keg.status = "Out of stock!";
+  //       }
+  //     }
+  //     return keg;
+  //   })
+  //   this.setState({
+  //     masterKegList: newMasterKegList
+  //   })
+  // }
+
+
   handleSellingPint = (id) => {
     const newMasterKegList = this.state.masterKegList;
     newMasterKegList.map((keg) => {
       if(keg.id === id) {
-        if (keg.quantity > 1) {
+        if (keg.quantity <= 11 && keg.quantity >1) {
+          keg.status = "Almost out of stock";
+          keg.quantity = keg.quantity -1
+        } else if (keg.quantity > 1) {
           keg.quantity = keg.quantity - 1;
         } else {
-          keg.quantity = "Out of stock!"
+          keg.quantity = 0;
+          keg.status = "Out of stock!"
         }
       }
       return keg;
@@ -69,8 +95,9 @@ class KegControl extends React.Component {
     const newMasterKegList = this.state.masterKegList;
     newMasterKegList.map((keg) => {
       if(keg.id === id) {
-        if(keg.quantity === "Out of stock!") {
+        if(keg.quantity === 0) {
           keg.quantity = 124;
+          keg.status = "Keg is full";
         }
       }
       return keg;

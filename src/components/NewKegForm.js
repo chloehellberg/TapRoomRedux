@@ -5,7 +5,16 @@ import PropTypes from 'prop-types';
 function NewKegForm(props){
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({name: event.target.name.value, quantity: 2, brand: event.target.brand.value, price: event.target.price.value, style: event.target.style.value, id: v4()});
+    const newKeg = {
+      name: event.target.name.value,
+      quantity: 2,
+      brand: event.target.brand.value,
+      price: event.target.price.value,
+      style: event.target.style.value,
+      status: "Keg is full",
+      id: v4()
+    }
+    props.onNewKegCreation(newKeg);
   
   }
   

@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from "./Header";
+// import KegList from "./KegList";
+import KegControl from "./KegControl";
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
     <div class = "container">
       <div class="row">
         <div class="col-md-3">
+          <KegControl />
         </div>
         <div class="col-md-3">
         </div>

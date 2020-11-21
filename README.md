@@ -24,7 +24,7 @@
 ------------------------------
 ### <u>Table of Contents</u>
 * <a href="#🌐-about-the-project">About the Project</a>
-    * <a href="#📖-description">Description</a>
+    * <a href="#📖-description">Description and Components Diagram</a>
     * <a href="#🦠-known-bugs">Known Bugs</a>
     * <a href="#🛠-built-with">Built With</a>
 * <a href="#🏁-getting-started">Getting Started</a>
@@ -49,6 +49,10 @@ This project utilizes React to create an imaginary tap room where a bar can stor
     - For Each Keg: See its name, brand, price, quantity and style/type.
   - See how many pints are left in a keg (full keg has roughly 124 pints).
   - Ability to click a button on each keg to sell a pint of it and quantity of keg will descrease the number of pints left by 1. Pints should not be able to go below 0.
+
+### Tap Room Components Diagram
+
+<img src="./TapRoomComponents.png">
 
 
 ### 🦠 Known Bugs
@@ -84,11 +88,13 @@ This project utilizes React to create an imaginary tap room where a bar can stor
 
   1) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
   2) Open up your system Terminal or GitBash, navigate to your desktop with the command: `cd Desktop`, or whichever location suits you best.
-  3) Clone the repository to your desktop: `$ git clone https://github.com/LondresRi/README-Assistance.git`
-  4) Run the command `cd README-Assistance` to enter into the project directory.
+  3) Clone the repository to your desktop: `$ git clone https://github.com/chloehellberg/TapRoom`
+  4) Run the command `cd tap-room` to enter into the project directory.
   5) View or Edit:
       * Code Editor - Run the command `atom .` or `code .` to open the project in Atom or VisualStudio Code respectively for review and editing.
       * Text Editor - Open by double clicking on any of the files to open in a text editor.
+  6) In the project directory (tap-room), type `npm start` to run the application in development mode.  Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Page will reload if you make edits. You will also see any lint errors in the console.
+
 
   #### Download
 
@@ -102,30 +108,6 @@ This project utilizes React to create an imaginary tap room where a bar can stor
   - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
   - You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
   - To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ------------------------------
 

@@ -17,7 +17,7 @@
             <strong>By: Chloe Hellberg</strong>
         </a>
         <br>
-        <small>Initiated November 21st, 2020</small>
+        <small>Built November 21st, 2020</small>
     </p>  
 </p>
 

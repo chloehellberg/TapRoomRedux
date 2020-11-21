@@ -52,7 +52,7 @@ class KegControl extends React.Component {
     const newMasterKegList = this.state.masterKegList;
     newMasterKegList.map((keg) => {
       if(keg.id === id) {
-        if (keg.quantity > 0) {
+        if (keg.quantity > 1) {
           keg.quantity = keg.quantity - 1;
         } else {
           keg.quantity = "Out of stock!"

@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.card {
+  background-color: purple;
+}
+
+.boxTop {
+  border-radius: 25px;
+  border: solid black;
+  padding: 15px;
+  border-width: 2px;
+  background-color: #12232E;
+}
+
+/* .border {
+  border: solid black;
+  border-width: 2px;
+  padding: 10px;
+  margin: 5px;
+} */

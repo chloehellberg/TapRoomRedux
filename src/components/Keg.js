@@ -4,21 +4,18 @@ import PropTypes from "prop-types";
 function Keg(props){
   return(
     <React.Fragment>
+      <div class="border">
+        <div class="boxTop">
+      <h2>{props.name}</h2>
+      <p>Quantity: {props.quantity}</p>
+      <p>Status: {props.status}</p>
       <div onClick = {() => props.whenKegClicked(props.id)}>
         <button id = "detailButton">Show Details</button>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="card">
-            <h2>{props.name}</h2>
-            <p>Brand: {props.brand}</p>
-            <p>Quantity: {props.quantity}</p>
-            <p>Status: {props.status}</p>
-            <button onClick={() => props.whenSellClicked(props.id)}>Sell Pint</button>
-            <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
-          </div>
-        </div>
-      </div>
+      <button onClick={() => props.whenSellClicked(props.id)}>Sell Pint</button><br></br>
+       <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
+       </div>
+       </div>
       <hr/>
     </React.Fragment>
   );

@@ -49,6 +49,8 @@ This project utilizes React to create an imaginary tap room where a bar can stor
     - For Each Keg: See its name, brand, price, quantity and style/type.
   - See how many pints are left in a keg (full keg has roughly 124 pints).
   - Ability to click a button on each keg to sell a pint of it and quantity of keg will descrease the number of pints left by 1. Pints should not be able to go below 0.
+  - Ability to "restock" keg once keg is empty and hits 0 pints.
+  - Keg will update to say "Almost Empty" when it hits 10 pints left and "Out of Stock" when it hits 0 pints left.
 
 ### Tap Room Components Diagram
 

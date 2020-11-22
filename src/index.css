@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #12232E;
+  color: white;
 }
 
 code {
@@ -22,12 +24,24 @@ code {
   border: solid black;
   padding: 15px;
   border-width: 2px;
-  background-color: #12232E;
+  background-color: #007cc7;
 }
 
-/* .border {
-  border: solid black;
-  border-width: 2px;
+.btn-info{
+  margin-top: 4px;
+  margin-bottom: 3px;
+}
+
+.submission{
+  margin: 2px;
+  background-color: #EEFBFB;
+  color: #203647;
+}
+
+img{
+  border-radius: 25px;
   padding: 10px;
-  margin: 5px;
-} */
+  border-width: 2px;
+  width: 50%;
+  float: right;
+}

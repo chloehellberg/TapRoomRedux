@@ -7,7 +7,7 @@ function NewKegForm(props){
     event.preventDefault();
     const newKeg = {
       name: event.target.name.value,
-      quantity: 20,
+      quantity: 124,
       brand: event.target.brand.value,
       price: event.target.price.value,
       style: event.target.style.value,
@@ -21,22 +21,22 @@ function NewKegForm(props){
   return (
     <React.Fragment>
       <form onSubmit={handleNewKegFormSubmission}>
-        <input
+        <input class="submission"
           type='text'
           name='name'
           placeholder = 'Name' />
-          <input
+          <input class="submission"
           type='text'
           name='brand' 
           placeholder = 'Brand'/>
-        <input
+        <input class="submission"
           name='price'
           placeholder='Price per Pint' />
-        <input 
+        <input class="submission"
           type='text'
           name="style"
           placeholder = 'Style'/>
-        <button type='submit'>Add Keg</button>
+        <button class="btn btn-info" type='submit'>Add Keg</button>
       </form>
     </React.Fragment>
   );

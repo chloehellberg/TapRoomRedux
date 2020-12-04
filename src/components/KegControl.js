@@ -32,7 +32,7 @@ class KegControl extends React.Component {
 
   handleDeletingKeg = (id) => {
    const { dispatch } = this.props;
-   const action = actions.deleteKeg();
+   const action = actions.deleteKeg(id);
    dispatch(action);
    this.setState({
      selectedKeg: null
@@ -69,9 +69,9 @@ class KegControl extends React.Component {
       }
       return keg;
     })
-    // this.setState({
-    //   masterKegList: newMasterKegList
-    // })
+    this.setState({
+      masterKegList: newMasterKegList
+    })
   }
 
   handleStockingKeg = (id) => {
@@ -85,9 +85,9 @@ class KegControl extends React.Component {
       }
       return keg;
     })
-    // this.setState({
-    //   masterKegList: newMasterKegList
-    // })
+    this.setState({
+      masterKegList: newMasterKegList
+    })
   }
 
   render(){

@@ -65,8 +65,10 @@ handleAddingNewKegToList = (newKeg) => {
     } 
   }
 
+  
+
   handleSellingPint = (id) => {
-    const newMasterKegList = this.state.masterKegList;
+    const newMasterKegList = this.props.masterKegList;
     newMasterKegList.map((keg) => {
       if(keg.id === id) {
         if (keg.quantity <= 11 && keg.quantity >1) {
@@ -87,7 +89,7 @@ handleAddingNewKegToList = (newKeg) => {
   }
 
   handleStockingKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList;
+    const newMasterKegList = this.props.masterKegList;
     newMasterKegList.map((keg) => {
       if(keg.id === id) {
         if(keg.quantity === 0) {

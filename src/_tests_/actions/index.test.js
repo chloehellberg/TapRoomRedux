@@ -15,9 +15,11 @@ describe('tap room actions', () => {
   });
 
   it('addKeg should create ADD_TICKET action', () => {
-    expect(actions.addKeg({name: 'Tasty Beer', brand: 'Deschutes', price: '$5.00', style: 'IPA', id: 1})).toEqual({
+    expect(actions.addKeg({name: 'Tasty Beer', quantity: 124, status: "In stock", brand: 'Deschutes', price: '$5.00', style: 'IPA', id: 1})).toEqual({
       type: 'ADD_KEG',
       name: 'Tasty Beer',
+      quantity: 124,
+      status: "In stock",
       brand: 'Deschutes',
       price: '$5.00',
       style: 'IPA',

@@ -8,10 +8,12 @@ export const toggleForm = () => ({
 });
 
 export const addKeg = (keg) => {
-  const { name, brand, price, style, id } = keg;
+  const { name, quantity, status, brand, price, style, id } = keg;
   return {
   type: 'ADD_KEG',
   name: name,
+  quantity: quantity,
+  status: status,
   brand: brand,
   price: price,
   style: style,

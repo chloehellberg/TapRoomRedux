@@ -4,6 +4,7 @@ import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as actions from './../actions';
 
 class KegControl extends React.Component {
 
@@ -14,23 +15,13 @@ class KegControl extends React.Component {
     };
   }
 
-handleAddingNewKegToList = (newKeg) => {
-  const { dispatch } = this.props;
-  const { id, name, brand, price, style } = newKeg;
-  const action = {
-    type: 'ADD_KEG',
-    id: id,
-    name: name,
-    brand: brand,
-    price: price,
-    style: style
+  handleAddingNewKegToList = (newKeg) => {
+    const { dispatch } = this.props;
+    const action = actions.addKeg(newKeg);
+    dispatch(action);
+    const action2 = actions.toggleForm();
+    dispatch(action2);
   }
-  dispatch(action);
-  const action2 = {
-    type: 'TOGGLE_FORM'
-  }
-  dispatch(action2);
-}
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.props.masterKegList[id];
@@ -41,10 +32,7 @@ handleAddingNewKegToList = (newKeg) => {
 
   handleDeletingKeg = (id) => {
    const { dispatch } = this.props;
-   const action = {
-     type: 'DELETE_KEG',
-     id: id
-   }
+   const action = actions.deleteKeg();
    dispatch(action);
    this.setState({
      selectedKeg: null
@@ -58,9 +46,7 @@ handleAddingNewKegToList = (newKeg) => {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = actions.toggleForm();
       dispatch(action);
     } 
   }

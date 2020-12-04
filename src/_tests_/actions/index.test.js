@@ -13,4 +13,15 @@ describe('tap room actions', () => {
       type: 'TOGGLE_FORM'
     });
   });
+
+  it('addKeg should create ADD_TICKET action', () => {
+    expect(actions.addKeg({name: 'Tasty Beer', brand: 'Deschutes', price: '$5.00', style: 'IPA', id: 1})).toEqual({
+      type: 'ADD_KEG',
+      name: 'Tasty Beer',
+      brand: 'Deschutes',
+      price: '$5.00',
+      style: 'IPA',
+      id: 1
+    });
+  });
 });

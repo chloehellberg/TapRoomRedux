@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 function KegList(props){
   return(
     <React.Fragment>
-      {props.kegList.map((keg) =>
+      {Object.values(props.kegList).map((keg) =>
         <Keg name = {keg.name}
         whenKegClicked = {props.onKegSelection}
         whenSellClicked = {props.onSellPint}

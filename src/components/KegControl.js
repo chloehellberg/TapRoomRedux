@@ -33,7 +33,7 @@ handleAddingNewKegToList = (newKeg) => {
 }
 
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.props.masterKegList.filter[id];
+    const selectedKeg = this.props.masterKegList[id];
     this.setState({
       selectedKeg: selectedKeg
     });

@@ -10,7 +10,6 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
       selectedKeg: null,
     };
   }
@@ -27,9 +26,10 @@ handleAddingNewKegToList = (newKeg) => {
     style: style
   }
   dispatch(action);
-  this.setState({
-    formVisibleOnPage: false
-  });
+  const action2 = {
+    type: 'TOGGLE_FORM'
+  }
+  dispatch(action2);
 }
 
   handleChangingSelectedKeg = (id) => {
@@ -54,52 +54,53 @@ handleAddingNewKegToList = (newKeg) => {
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formVisibleOnPage: false,
         selectedKeg: null
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
-    }
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
+    } 
   }
 
-  // handleSellingPint = (id) => {
-  //   const newMasterKegList = this.state.masterKegList;
-  //   newMasterKegList.map((keg) => {
-  //     if(keg.id === id) {
-  //       if (keg.quantity <= 11 && keg.quantity >1) {
-  //         keg.status = "Almost out of stock";
-  //         keg.quantity = keg.quantity -1
-  //       } else if (keg.quantity > 1) {
-  //         keg.quantity = keg.quantity - 1;
-  //       } else {
-  //         keg.quantity = 0;
-  //         keg.status = "Out of stock!"
-  //       }
-  //     }
-  //     return keg;
-  //   })
-  //   this.setState({
-  //     masterKegList: newMasterKegList
-  //   })
-  // }
+  handleSellingPint = (id) => {
+    const newMasterKegList = this.state.masterKegList;
+    newMasterKegList.map((keg) => {
+      if(keg.id === id) {
+        if (keg.quantity <= 11 && keg.quantity >1) {
+          keg.status = "Almost out of stock";
+          keg.quantity = keg.quantity -1
+        } else if (keg.quantity > 1) {
+          keg.quantity = keg.quantity - 1;
+        } else {
+          keg.quantity = 0;
+          keg.status = "Out of stock!"
+        }
+      }
+      return keg;
+    })
+    // this.setState({
+    //   masterKegList: newMasterKegList
+    // })
+  }
 
-  // handleStockingKeg = (id) => {
-  //   const newMasterKegList = this.state.masterKegList;
-  //   newMasterKegList.map((keg) => {
-  //     if(keg.id === id) {
-  //       if(keg.quantity === 0) {
-  //         keg.quantity = 124;
-  //         keg.status = "Keg is full";
-  //       }
-  //     }
-  //     return keg;
-  //   })
-  //   this.setState({
-  //     masterKegList: newMasterKegList
-  //   })
-  // }
+  handleStockingKeg = (id) => {
+    const newMasterKegList = this.state.masterKegList;
+    newMasterKegList.map((keg) => {
+      if(keg.id === id) {
+        if(keg.quantity === 0) {
+          keg.quantity = 124;
+          keg.status = "Keg is full";
+        }
+      }
+      return keg;
+    })
+    // this.setState({
+    //   masterKegList: newMasterKegList
+    // })
+  }
 
   render(){
     let currentVisibleState = null;
@@ -107,7 +108,7 @@ handleAddingNewKegToList = (newKeg) => {
     if (this.state.selectedKeg != null) {
       currentVisibleState = <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg}/>
       buttonText = 'Return to Keg List'
-    } else if(this.state.formVisibleOnPage) {
+    } else if(this.props.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
       buttonText = "Return to Keg List";
     } else {
@@ -124,12 +125,14 @@ handleAddingNewKegToList = (newKeg) => {
 }
 
 KegControl.propTypes = {
-  masterKegList: PropTypes.object
+  masterKegList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    masterKegList: state
+    masterKegList: state.masterKegList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 };
 

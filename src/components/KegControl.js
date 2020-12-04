@@ -21,24 +21,15 @@ class KegControl extends React.Component {
   }
 
   handleChangingSelectedKeg = (id) => {
-    const { dispatch } = this.props;
-    const action = actions.selectedKeg(id);
-    dispatch(action);
-  }
-
-  handleChangingSelectedKeg = (id) => {
-    const { dispatch } = this.props;
     const selectedKeg2 = this.props.masterKegList[id];
+    const { dispatch } = this.props;
     const action = actions.selectedKeg(selectedKeg2);
     dispatch(action);
-    // this.setState({
-    //   selectedKeg: selectedKeg
-    // })
   }
 
   handleDeletingKeg = (id) => {
    const { dispatch } = this.props;
-   const action = actions.selectedKeg(id);
+   const action = actions.selectedKeg();
    dispatch(action);
    const action2 = actions.deleteKeg(id);
    dispatch(action2);

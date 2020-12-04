@@ -25,7 +25,7 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   onKegSelection: PropTypes.func,
   onSellPint: PropTypes.func,
   onStockKeg: PropTypes.func

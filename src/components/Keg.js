@@ -11,9 +11,10 @@ function Keg(props){
           <img src={Pint} alt="pint of beer" />
           <p>Pint Count: {props.quantity}</p>
           <p>Status: {props.status}</p>
-          <div onClick = {() => props.whenKegClicked(props.id)}>
+          {/* <div onClick = {() => props.whenKegClicked(props.id)}>
             <button class="btn btn-info">Show Details</button>
-          </div>
+          </div> */}
+          <button class="btn btn-info" onClick={() => props.whenKegClicked(props.id)}>Show Details</button>
           <button class="btn btn-info" onClick={() => props.whenSellClicked(props.id)}>Sell Pint</button><br></br>
           <button class="btn btn-info" onClick={() => props.whenStockClicked(props.id)}>Restock Full Keg</button>
         </div>

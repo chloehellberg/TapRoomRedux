@@ -27,4 +27,11 @@ describe('tap room actions', () => {
       id: 1
     });
   });
+
+  it('selectedKeg should create SELECTED_KEG action', () => {
+    expect(actions.selectedKeg(1)).toEqual({
+      type: c.SELECTED_KEG,
+      id: 1
+    });
+  });
 });

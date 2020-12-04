@@ -22,3 +22,8 @@ export const addKeg = (keg) => {
   id: id
   };
 };
+
+export const selectedKeg = id => ({
+  type: c.SELECTED_KEG,
+  id
+});

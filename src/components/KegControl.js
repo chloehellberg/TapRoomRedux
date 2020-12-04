@@ -49,7 +49,11 @@ class KegControl extends React.Component {
     } 
   }
 
-  
+  // else {
+  //   const { dispatch } = this.props;
+  //   const action = actions.toggleForm();
+  //   dispatch(action);
+  // } 
 
   handleSellingPint = (id) => {
     const newMasterKegList = this.props.masterKegList;

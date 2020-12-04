@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <u><big>||&emsp;<b><u>Beer Haus Tap Room</u></b>&emsp;||</big></u>
+  <u><big>||&emsp;<b><u>Beer Haus Tap Room - With Redux</u></b>&emsp;||</big></u>
 </p>
 <p align="center">
     <!-- Project Avatar/Logo -->
@@ -17,7 +17,7 @@
             <strong>By: Chloe Hellberg</strong>
         </a>
         <br>
-        <small>Built November 21st, 2020</small>
+        <small>Built November 21st, 2020, Revisited December 4th, 2020</small>
     </p>  
 </p>
 
@@ -59,7 +59,7 @@ This project utilizes React to create an imaginary tap room where a bar can stor
 
 ### 🦠 Known Bugs
 
-* None known yet. <a href="https://github.com/chloehellberg/TapRoom/issues">Please report if you discover any.</a>
+* None known yet. <a href="https://github.com/chloehellberg/TapRoomRedux/issues">Please report if you discover any.</a>
 
 ### 🛠 Built With
 * [React](https://reactjs.org/)
@@ -90,7 +90,7 @@ This project utilizes React to create an imaginary tap room where a bar can stor
 
   1) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
   2) Open up your system Terminal or GitBash, navigate to your desktop with the command: `cd Desktop`, or whichever location suits you best.
-  3) Clone the repository to your desktop: `$ git clone https://github.com/chloehellberg/TapRoom`
+  3) Clone the repository to your desktop: `$ git clone https://github.com/chloehellberg/TapRoomRedux`
   4) Run the command `cd tap-room` to enter into the project directory.
   5) View or Edit:
       * Code Editor - Run the command `atom .` or `code .` to open the project in Atom or VisualStudio Code respectively for review and editing.

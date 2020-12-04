@@ -1,9 +1,9 @@
 import * as c from './../actions/ActionTypes';
 
-export default ( state = '', action ) => {
+export default ( state = null, action ) => {
   switch(action.type) {
     case c.SELECTED_KEG:
-      return state = action.id;
+      return !state;
     default:
       return state;
   };

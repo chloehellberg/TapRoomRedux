@@ -55,7 +55,7 @@ class KegControl extends React.Component {
 
   handleSellingPint = (id) => {
     const newMasterKegList = this.props.masterKegList;
-    newMasterKegList.map((keg) => {
+    Object.values(newMasterKegList).map((keg) => {
       if(keg.id === id) {
         if (keg.quantity <= 11 && keg.quantity >1) {
           keg.status = "Almost out of stock";
@@ -76,7 +76,7 @@ class KegControl extends React.Component {
 
   handleStockingKeg = (id) => {
     const newMasterKegList = this.props.masterKegList;
-    newMasterKegList.map((keg) => {
+    Object.values(newMasterKegList).map((keg) => {
       if(keg.id === id) {
         if(keg.quantity === 0) {
           keg.quantity = 124;

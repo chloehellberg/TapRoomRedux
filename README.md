@@ -67,7 +67,7 @@ This project utilizes React to create an imaginary tap room where a bar can stor
 * [HTML5](https://html.com/html5/)
 * [Markdown](https://daringfireball.net/projects/markdown/)
 
----------------------------------
+----------------------------------
 
 ## 🏁 Getting Started
 
